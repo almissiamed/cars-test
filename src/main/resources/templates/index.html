@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CarSales - Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">CarSales</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/cars">Voir les voitures</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cars/new">Ajouter une voiture</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1>Bienvenue sur CarSales</h1>
+        <p class="lead">Votre plateforme de vente de voitures d'occasion</p>
+        <div class="mt-4">
+            <a href="/cars" class="btn btn-primary btn-lg me-2">Voir les annonces</a>
+            <a href="/cars/new" class="btn btn-success btn-lg">Déposer une annonce</a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Large sélection</h5>
+                    <p class="card-text">Des centaines de voitures disponibles.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Prix imbattables</h5>
+                    <p class="card-text">Les meilleurs prix du marché.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Confiance</h5>
+                    <p class="card-text">Achetez et vendez en toute sécurité.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire - CarSales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">CarSales</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/cars">Voir les voitures</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cars/new">Ajouter une voiture</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h1 th:if="${car.id == null}">Ajouter une voiture</h1>
+    <h1 th:unless="${car.id == null}">Modifier la voiture</h1>
+
+    <form th:action="${car.id == null} ? @{/cars} : @{/cars/{id}(id=${car.id})}"
+          th:object="${car}" method="post" class="mt-4">
+
+        <div class="mb-3">
+            <label class="form-label">Marque</label>
+            <input type="text" th:field="*{brand}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Modèle</label>
+            <input type="text" th:field="*{model}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Année</label>
+            <input type="number" th:field="*{year}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Prix (€)</label>
+            <input type="number" step="0.01" th:field="*{price}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Couleur</label>
+            <input type="text" th:field="*{color}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Kilométrage</label>
+            <input type="number" th:field="*{mileage}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea th:field="*{description}" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">URL de l'image</label>
+            <input type="text" th:field="*{imageUrl}" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a href="/cars" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+</body>
+</html>
